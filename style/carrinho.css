@@ -1,0 +1,124 @@
+@import url('header.css');
+
+#carrinho img{
+    position: fixed;
+    z-index: 1;
+    bottom: 5%;
+    right: 5%;
+    width: 3rem;
+    background-color: rgb(150, 219, 197);
+    border: 2px solid rgb(93, 158, 137);
+    border-radius: 3px 3px 3px 3px;
+}
+
+.produto, #confirmarCompra, #continuarComprando{
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#produtos{
+    gap: 20px;
+}
+
+#produtos > div{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 15px
+}
+
+
+#compras {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+#nomeItem{
+    width: 100%;
+    font-size: 20px;
+}
+
+#linha{
+    border: 1px solid black;
+    width: 100%
+}
+
+#total{
+    font-size: 40px;
+}
+
+
+@media (orientation: landscape){
+
+
+    #carrinhoContainer {
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #compras img{
+        width: 200px;
+    }
+
+    .produto{
+        width: 500px;
+        height: 200px;
+        font-size: 20px;
+        display: grid;
+        display: flex;
+        align-items: center;
+    }
+
+    #produtos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 90%;
+    }
+
+    #preco{
+        font-weight: bold;
+        line-height: 50px;
+    }
+
+    #linha{
+        border: 1px solid black;
+        width: 100%
+    }
+
+
+    #confirmarCompra, #continuarComprando{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: orange;
+        border-radius: 15px;
+    }
+
+    #produtos div{
+        flex-direction: row;
+        width: 100%;
+    }
+                
+}
+
+#compras{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(223, 222, 168, 0.692);
+    width: 60%;
+    height: 100%;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}

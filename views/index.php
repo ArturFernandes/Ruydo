@@ -8,377 +8,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../style/index.css">
+    <script src="../script/views.js"></script>
 
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background: rgb(58,165,180);
-            background: linear-gradient(90deg, rgba(58,165,180,0.11808473389355745) 0%, rgba(29,253,213,0.16290266106442575) 50%, rgba(174,252,69,0.10688025210084029) 100%);
-            font-weight: 400;
-        }
-        
-        header{
-            color: rgb(17, 24, 77);
-            display: flex;
-            background-color: rgb(150, 219, 197);
-            align-items: center;
-
-            font-size: 1.5rem;
-
-            box-sizing: border-box;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        
-
-        @media (orientation: portrait) {
-            #menu{
-                position: absolute;
-                right: 50px;
-                top: 50px;
-                text-align: right;            
-             }
-
-             #conteiner {
-                display: none;
-                position: relative;
-                font-size: 25px;
-                line-height: 100px;
-                background-color: rgba(109, 228, 228, 0.897);
-                z-index: 999;
-                padding: 10px;
-                border-radius: 10px;
-                top: 20px;
-            }
-
-            #menu:hover #conteiner{
-                display: block;    
-            }
-
-            #perfil {
-                display: none;
-            }
-        }        
-
-        #searchBar{
-            display: none;
-            align-items: center;           
-        }
-
-        #searchBar input{
-            width: 20vw;
-            height: 2.1rem;
-            font-style: italic;
-            color: gray;
-            font-size: 1.3rem;
-
-        }
-    
-        #searchBar button{
-            height: 2.5rem;
-            font-size: 1.5rem;
-        }
-
-
-        #titulo{
-            font-size: 3rem;
-            min-width: 300px;
-            text-align: right;
-        }
-
-        
-        #carrinho img{
-            position: fixed;
-            z-index: 1;
-            bottom: 5%;
-            right: 5%;
-            width: 3rem;
-            background-color: rgb(150, 219, 197);
-            border: 2px solid rgb(93, 158, 137);
-            border-radius: 3px 3px 3px 3px;
-        }
-
-        #sidebar{
-            font-weight: bold;
-            background-color: rgba(199, 255, 191, 0.61);
-
-            display: flex;
-            flex-direction: row;
-            justify-content:space-around;
-            font-size: 2rem;
-        }   
-
-        #sidebar div{
-            margin: 10px;
-            box-shadow: .5px .5px 2px rgb(78, 78, 47);
-            padding: 0px 10px 0px;
-            height: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            border-radius: 5px;
-        }
-
-
-        #radio{
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            height: 80px;
-            width: 100%;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 1.5rem;
-
-            background-color: rgb(210, 250, 237);
-            border-radius: 0px 0px 15px 15px;
-            padding: 10px;
-        }
-
-        audio{
-            height: 50px;
-            margin-left: 10px;
-        }
-
-        audio::-webkit-media-controls-panel{
-            background-color: rgb(150, 219, 197);
-            color: rgb(17, 24, 77);
-
-        }
-
-        .produtos {
-            display: flex;
-            justify-content:space-around;
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            position: relative;
-            top: 105px;
-            margin: 0 auto;
-        }
-        
-        .produto {
-            display: flex;
-            flex-direction: column;
-            padding: 15px;
-            align-items: center;
-            font-size: 18px;
-            
-
-            margin: 10px;
-            justify-content: space-evenly;
-            height: 500px;
-            width: 350px;
-
-            border-radius: 5px;
-            background-color: rgb(220, 250, 255);
-            border: 1px gray solid;
-        }
-
-        .nomeItem {
-            display: grid;
-            grid-template-rows: 35px 35px 35px;
-            gap: 10px;
-            font-size: 18px;
-            align-items: center;
-            justify-items: center;
-            color: black;
-        } 
-    
-        .produto img{
-            width: 300px;
-            margin-bottom: 20px;
-            border-radius:10px;
-            box-shadow: 0 0 10px black;
-            transition: scale 1s;
-        }
-
-        .preco{
-            font-size: 1.5rem;
-            margin: 0.75rem;
-            background-color: rgb(238, 247, 152);
-            border-radius: 10px;
-            padding: 5px;
-        }
-
-        .preco del{
-            color: red;
-            font-size: 1rem;
-        }
-
-        .comprar {
-            background-color: rgb(243, 193, 101);
-            width: 5rem;
-            height: 2rem;
-
-            display: flex;
-            align-items: center;
-
-            font-weight: bold;
-            border-radius: 5px;
-            border: 0.3px solid rgb(226, 175, 81);
-            text-decoration: none;
-            color: black;
-            padding: 0px 5px 0 5px;
-            text-align: center;
-
-        }
-
-        #produtosConteiner {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            top: 105px;
-        }
-
-        #numPagina{
-            position: relative;
-            top: 165px;
-            display: flex;
-            justify-content: center;
-            font-size: 25px;
-        }
-
-        @media (max-width: 684px){
-            #sidebar div p {
-                display: none;
-            }
-        }
-
-        @media (orientation: landscape){
-            #carrinho img {
-                width: 4rem;
-                bottom: 10%;
-            }
-
-            header {
-                gap: 5%;
-            }
-
-            #searchBar{
-                display: flex;
-            }
-
-            #menu label {
-                display: none
-            }
-
-            #conteiner {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                right: 0;
-                gap: 4vw;
-            }
-            
-            #perfil img{
-                display: flex;
-                width: 70px;
-            }
-
-            #sidebar{
-                flex-direction: column;
-                height: 600px;
-                position: relative;
-                border-radius: 0px 0px 15px 0px;
-            }
-
-            main {
-                display: flex;
-            }
-
-            #radio {
-                height: 50px;
-                width: 500px;
-                left: 40%;
-            }
-            .produto {
-                font-size: 22px;
-            }
-
-            .preco del {
-                font-size: 20px
-            }
-
-            .preco {
-                font-size: 25px
-            }
-
-            @media (orientation: landscape){
-                .produto img:hover{
-                    scale: 110%;
-                }
-            }
-                        
-        }
-
-    </style>
 </head>
 
+
 <body>
-    <header>
-        <h1 id="titulo"><a href="index.php">Ruydo🎼</a></h1>
-        <div id="searchBar"><form action=""><input type="text" name="busca"  placeholder="O que você quer ouvir?"><button>🔎</button></form></div>        
-        <div id="menuConteiner">
-            <div id="menu"><label>|||</label>
-                <div id="conteiner">
-                    <div id="inicio"><a href="">Início</a></div>
-                    <div><a href="">Promoções</a></div>
-                    <div><a href=""> Fale Conosco</a></div>
-                    <div id="minhaConta"><a href="paginaLogin.php">Minha Conta</a></div>
-                    <!-- gastei no paint nesse logo do perfil aqui, vai dizer -->
-                    <div id="perfil"><img src="/Ruydo/imgs/vinyl_PNG5-removebg-preview.png" alt=""></div>
-                </div>
-        </div>
-        
-             
-        </div>
-    </header>
+<div id="notification"></div>
+
+    <?php
+    require "../php/header.php";
+    echo returnHeaders();
+
+    ?>
     <div id="carrinho"><a href="carrinho.php"><img src="https://cdn-icons-png.flaticon.com/512/57/57451.png?w=360" alt=""></a></div>
     <main>        
         <nav id="sidebar">
-            <div >💿 <a href="?produtos=1"><p>CD's</p></div>
-            <div >💽 <a href="?produtos=2"><p>Vinis</p></div>
-            <div >🎧 <p>Audio</p></div>
-            <div >🧥 <p>Merch</p></div>
+            <div ><a href="?category=cd">💿<p>CDs</p></a></div>
+            <div ><a href="?category=vinyl">💽<p>LPs</p></a></div>
+            <div ><a href="?category=audio">🎧<p>Audio</p></a></div>
+            <div ><a href="?category=merch">🧥<p>Merch</p></a></div>
         </nav>
 
-        <div id="radio">Rádio Ruydo<audio src="/Ruydo/media/vagabundo nao e facil.mp3" controls>Seu navegador não gosta de música</audio></div>
-
-        <div id="produtosConteinr">
+        <div id="produtosContainer">
+            <div id="searchBar">
+                <form action=""><input type="text" name="busca" placeholder="O que você quer ouvir?"><button>🔎</button></form>
+            </div>
             <div class="produtos">
             <?php
                 require_once '../php/conexao.php';
 
-                if (isset($_GET['produtos'])) {
-                    if($_GET['produtos'] == '1') {
-                    $sql = "SELECT * FROM produtos WHERE categoria = 1";
-                    } else if ($_GET['produtos'] == '2') {
-                        $sql = "SELECT * FROM produtos WHERE categoria = 2";
-                    }
-
+                if (isset($_GET['category'])) {
+                    $sql = "SELECT * FROM products WHERE category = '" . $_GET['category'] . "'";
                 } else if(isset($_REQUEST['busca'])) {
-                    $sql = "SELECT * FROM produtos WHERE nome LIKE '%$_REQUEST[busca]%'";
+                    $sql = "SELECT * FROM products WHERE name LIKE '%$_REQUEST[busca]%'";
+                } else if (isset($_GET['highlight'])) {
+                    $sql = "SELECT * FROM products WHERE highlight = '" .$_GET['highlight']. "'";
                 } else {
-                    $sql = "SELECT * FROM produtos WHERE destaque = 1";
+                    $sql = "SELECT * FROM products";
                 }
 
                 $qr = mysqli_query($con, $sql) or die(mysqli_error($con));
                 while ($ln = mysqli_fetch_assoc($qr)) {
-                    echo '<div class="produto" id="' . $ln['id'] . '"><a href="produto.php?produto='. $ln['id'] .'"><img src="' . $ln['imagem'] . '" alt=""></a><div class="nomeItem">' . $ln['nome'] . '<div class="preco">' . $ln['preco'] . '</div><a href="carrinho.php?acao=add&id=' . $ln['id'] . '" class="comprar">Comprar</a></div></div>';
+                    echo '<div class="produto" id="' . $ln['id'] . '"><a href="produto.php?id='. $ln['id'] .'"><img src="' . $ln['image'] . '" alt=""></a><div class="nomeItem">' . $ln['name'] . '<div class="preco">' . $ln['price'] . '</div><a href="carrinho.php?acao=add&id=' . $ln['id'] . '" class="comprar">Comprar</a><a id="addCarrinho" class="comprar" onclick="addToCart('.$ln['id'].')">Adicionar ao carrinho</a></div></div>';
                 }
-            ?>                
+            ?>
             </div>
         </div>
     </main>

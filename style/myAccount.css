@@ -1,0 +1,66 @@
+@import url('header.css');
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#profileContainer {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+}
+
+#profileData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#profilePic img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+#username, #email, #oldPassword, #newPassword, #confirmNewPassword {
+    margin-bottom: 10px;
+    width: 15vw;
+    height: 40px;
+    padding: 5px;
+    font-size: 1rem;
+    background-color: antiquewhite;
+}
+
+#oldPassword, #newPassword, #confirmNewPassword {
+    border: none;
+}
+
+#passwordChange {
+    display: flex;
+    flex-direction: column;
+}
+
+#exitAccount {
+    cursor: pointer;
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 10vw;
+    height: 40px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#exitAccount:hover {
+    background-color: #ff6b52;
+}
+
