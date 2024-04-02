@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/carrinho.css">
+    <link rel="stylesheet" href="../style/cart.css">
 
     
 </head>
@@ -16,20 +16,20 @@
 <body>
     <?php
     require "../php/header.php";
-    require "../php/addCarrinho.php";
+    require "../php/addCart.php";
     echo returnHeaders();
     ?>
 
-    <div id="carrinhoContainer">
+    <div id="cartContainer">
         <div id="compras">
-            <div id="produtos">
+            <div id="products">
                 <?php
-                    if(count($_SESSION['carrinho'])==0){
-                        header("Location: carrinhoVazio.php");
+                    if(count($_SESSION['cart'])==0){
+                        header("Location: cartVazio.php");
                         exit();
                     } else {
-                        if (isset($_SESSION['carrinho'])) {
-                            foreach ($_SESSION['carrinho'] as $id => $qtd) {
+                        if (isset($_SESSION['cart'])) {
+                            foreach ($_SESSION['cart'] as $id => $qtd) {
                                 $sql = "SELECT * FROM products WHERE id = '$id'";
                                 $qr = mysqli_query($con, $sql) or die(mysqli_error($con));
                                 while ($ln = mysqli_fetch_assoc($qr)) {
@@ -52,7 +52,7 @@
                 <div id="total">
                     <?php
                         $total = 0;
-                        foreach ($_SESSION['carrinho'] as $id => $qtd) {
+                        foreach ($_SESSION['cart'] as $id => $qtd) {
                             $sql = "SELECT * FROM products WHERE id = '$id'";
                             $qr = mysqli_query($con, $sql) or die(mysqli_error($con));
                             while ($ln = mysqli_fetch_assoc($qr)) {

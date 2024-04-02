@@ -3,9 +3,9 @@
 require_once 'conexao.php';
 
 
-if(isset($_SESSION['carrinho']) && count($_SESSION['carrinho']) > 0) {
+if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
     $totalPrice = 0;
-    foreach ($_SESSION['carrinho'] as $productId => $quantity) {
+    foreach ($_SESSION['cart'] as $productId => $quantity) {
         $userId = $_SESSION['user_id'];
         $productId = intval($productId);
         $quantity = intval($quantity);
@@ -16,11 +16,11 @@ if(isset($_SESSION['carrinho']) && count($_SESSION['carrinho']) > 0) {
         print($sql);
     }
 
-    unset($_SESSION['carrinho']);
+    unset($_SESSION['cart']);
     header("Location: ../views/sucessoCompra.php");
     exit;
 } else {
-    header("Location: ../views/carrinhoVazio.php");
+    header("Location: ../views/cartVazio.php");
     exit;
 }
 ?>

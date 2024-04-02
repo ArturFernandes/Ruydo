@@ -18,7 +18,7 @@
     require "../php/header.php";
     echo returnHeaders();
     ?>
-    <div id="carrinho"><a href="carrinho.php"><img src="https://cdn-icons-png.flaticon.com/512/57/57451.png?w=360" alt=""></a></div>
+    <div id="cart"><a href="cart.php"><img src="https://cdn-icons-png.flaticon.com/512/57/57451.png?w=360" alt=""></a></div>
     <main>        
         <div id="content">
                 <?php
@@ -47,9 +47,9 @@
                                     '. $ln['price'].'
                                 </div>
                                 <div class="buyingButtons">
-                                    <a href="carrinho.php?acao=add&id=' . $ln['id'] . '" class="comprar">
+                                    <a href="cart.php?acao=add&id=' . $ln['id'] . '" class="comprar">
                                         Comprar</a>
-                                    <a id="addCarrinho" class="comprar" onclick="addToCart('.$ln['id'].')">Adicionar ao carrinho</a>
+                                    <a id="addCart" class="comprar" onclick="addToCart('.$ln['id'].')">Adicionar ao cart</a>
                                     </a>
                                 </div>
                             </div>';

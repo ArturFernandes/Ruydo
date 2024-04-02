@@ -16,7 +16,6 @@
     <?php
     require "../php/header.php";
     require "../php/conexao.php";
-    require "../php/trocaSenha.php";
     echo returnHeaders();
 
     $username = $_SESSION['username'];

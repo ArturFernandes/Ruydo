@@ -1,6 +1,7 @@
 <?php
 @session_start();
 
+
 function returnHeaders() {
     $sessionView = isLogedIn();
     $header = '
@@ -11,7 +12,7 @@ function returnHeaders() {
                     <label>|||</label>
                     <div id="container">
                         <div id="inicio"><a href="index.php">Início</a></div>
-                        <div><a href="?highlight=1">Promoções</a></div>
+                        <div><a href="index.php?highlight=1">Promoções</a></div>
                         '. $sessionView .'
                     </div>
                 </div>

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/carrinhoVazio.css">
+    <link rel="stylesheet" href="../style/cartVazio.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     <main>
         <div id="mensagemContainer">
             <div id="imgCd"><img src="https://static.thenounproject.com/png/23523-200.png" alt=""></div>
-            <div id="mensagemCarrinho">Carrinho Vazio!</div>
+            <div id="mensagemCart">Cart Vazio!</div>
             <a href="index.php">Voltar às compras</a>
         </div>
     </main>

@@ -5,7 +5,6 @@ $username = isset($_REQUEST['username']) ? trim($_REQUEST['username']) : '';
 $email = isset($_REQUEST['email']) ? trim($_REQUEST['email']) : '';
 $password = isset($_REQUEST['password']) ? $_REQUEST['password'] : '';
 
-
 $sql_check = "SELECT * FROM users WHERE username='$username' OR email='$email'";
 $result_check = mysqli_query($con, $sql_check);
 

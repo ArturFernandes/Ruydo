@@ -9,30 +9,40 @@
     font-size: 2rem;
 }
 
-#sidebar div a {
+#sidebar div button {
     display: flex;
     align-items: center;
+    background: rgb(179, 224, 179);
+    border-radius: 5%;
+    width: 150%;
+    font-size: 20px;
+}
+
+#sidebar form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+
 }
 
 #sidebar div {
-    margin: 10px;
-    box-shadow: 0.5px 0.5px 2px rgb(78, 78, 47);
-    padding: 0px 10px 0px;
     height: 70px;
+    width: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
-.produtos {
+.products {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 70vw;
+    width: 85vw;
 
 
     position: relative;
@@ -104,15 +114,15 @@
     text-align: center;
 }
 
-#addCarrinho {
+#addCart {
     font-size: small;
 }
 
-#addCarrinho:hover {
+#addCart:hover {
     cursor: pointer;
 }
 
-#produtoscontainer {
+#productscontainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,14 +190,48 @@
         display: none;
     }
 
-    .produtos {
+    .products {
         justify-content: center;
+    }
+
+    #sidebar form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    #sidebar form div {
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    #sidebar form button {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        font-size: 20px;
+        
     }
 }
 
 @media (max-width: 684px) {
     #sidebar div p {
         display: none;
+    }
+
+    #sidebar div {
+        display: flex;
+        justify-content: center;
+    }
+
+    #sidebar div button{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
     }
 }
 

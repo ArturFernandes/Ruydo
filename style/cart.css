@@ -1,6 +1,6 @@
 @import url('header.css');
 
-#carrinho img{
+#cart img{
     position: fixed;
     z-index: 1;
     bottom: 5%;
@@ -19,11 +19,11 @@
     align-items: center;
 }
 
-#produtos{
+#products{
     gap: 20px;
 }
 
-#produtos > div{
+#products > div{
     border: 1px solid rgb(0, 0, 0);
     padding: 15px
 }
@@ -55,7 +55,7 @@
 @media (orientation: landscape){
 
 
-    #carrinhoContainer {
+    #cartContainer {
         padding: 20px;
         display: flex;
         justify-content: space-around;
@@ -74,7 +74,7 @@
         align-items: center;
     }
 
-    #produtos{
+    #products{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -100,7 +100,7 @@
         border-radius: 15px;
     }
 
-    #produtos div{
+    #products div{
         flex-direction: row;
         width: 100%;
     }
