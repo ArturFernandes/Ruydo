@@ -37,6 +37,10 @@ a {
     color: black;
 }
 
+#offers:hover {
+    cursor: pointer;
+}
+
 #container {
     display: flex;
     justify-content: space-between;

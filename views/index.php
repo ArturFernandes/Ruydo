@@ -10,8 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../style/index.css">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="../script/index.js"></script>
-        <script src="../script/addCart.js"></script>
+        <script type="module" src="../script/index.js"></script>
     </head>
 
 
@@ -26,13 +25,10 @@
         <div id="cart"><a href="cart.php"><img src="https://cdn-icons-png.flaticon.com/512/57/57451.png?w=360" alt=""></a></div>
         <main>        
             <nav id="sidebar">
-                <form action="">
-                    <div><button onclick="setCategory">💿<p>CDs</p></button></div>
-                    <div><button onclick="setCategory">💽<p>LPs</p></button></div>
-                    <div><button onclick="setCategory">🎧<p>Audio</p></button></div>
-                    <div><button onclick="setCategory">🧥<p>Merch</p></button></div>
-                </form>
-                
+                    <button class="catBtn" value='cd'>💿<p>CDs</p></button>
+                    <button class="catBtn" value='lp'>💽<p>LPs</p></button>
+                    <button class="catBtn" value='audio'>🎧<p>Audio</p></button>
+                    <button class="catBtn" value='merch'>🧥<p>Merch</p></button>
             </nav>
 
             <div id="productsContainer">

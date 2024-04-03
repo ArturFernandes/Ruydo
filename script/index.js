@@ -1,39 +1,57 @@
-$(document).ready(function () {
-  mostrarProducts();
-  function mostrarProducts() {
-    $.get("../php/indexMenu.php", function (data) {
-      mostraProdutos(data);
-    });
-  }
+import * as cart from './cart.js';
+
+$(document).ready(async function () {
+  await displayProducts();
+
+  $(".addCart").click(function (event) {
+    event.preventDefault();
+    cart.addToCart(event.target.dataset.value);
+  });
+
+  async function displayProducts() {
+      var data = await $.post('../php/indexMenu.php')
+      returnProducts(data);
+  }  
+
+  $("#offers").click(function (event) {
+    event.preventDefault();
+    saleProducts();
+  });
 
   $("#searchBar form").submit(function (event) {
     event.preventDefault();
-    buscarProducts($("#searchBar input").val());
+    searchProducts($("#searchBar input").val());
   });
 
-  $("#sideBar button").submit(function (event) {
-    event.preventDefault();
-    buscarProducts($("#sideBar button").val());
+  
+  $(".catBtn").click(function () {
+    setCategory($(this).val());
   });
 });
 
-function buscarProducts(busca) {
-  $.get("../php/indexMenu.php?busca=" + busca, function (data) {
-    mostraProdutos(data);
+function saleProducts() {
+  $.post("../php/indexMenu.php",{ highlight : 1}, function (data) {
+    returnProducts(data);
   });
 }
 
-function setCategory(busca) {
-  $.get("../php/indexMenu.php?busca=" + busca, function (data) {
-    mostraProdutos(data);
+function searchProducts(search) {
+  $.post("../php/indexMenu.php",{ search : search}, function (data) {
+    returnProducts(data);
   });
 }
 
-function mostraProdutos(data) {
+function setCategory(category) {
+  $.post("../php/indexMenu.php", {category : category}, function (data) {
+    returnProducts(data);
+  });
+}
+
+export function returnProducts(data) {
   var products = data ? JSON.parse(data) : [];
   $(".products").empty();
 
-  products?.forEach(function (produto) {
+  products.forEach(function (produto) {
     $(".products").append(
       '<div class="produto" id="' +
         produto.id +
@@ -47,9 +65,9 @@ function mostraProdutos(data) {
         produto.price +
         '</div><a href="cart.php?acao=add&id=' +
         produto.id +
-        '" class="comprar">Comprar</a><a id="addCart" class="comprar" onclick="addToCart(' +
+        '" class="comprar">Comprar</a><a class="addCart" data-value="' +
         produto.id +
-        ')">Adicionar ao cart</a></div></div>'
+        '">Adicionar ao carrinho</a></div></div>'
     );
   });
 }

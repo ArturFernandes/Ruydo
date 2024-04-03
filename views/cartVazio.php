@@ -18,9 +18,9 @@
     ?>
 
     <main>
-        <div id="mensagemContainer">
+        <div id="messageContainer">
             <div id="imgCd"><img src="https://static.thenounproject.com/png/23523-200.png" alt=""></div>
-            <div id="mensagemCart">Cart Vazio!</div>
+            <div id="messageCart">Cart Vazio!</div>
             <a href="index.php">Voltar às compras</a>
         </div>
     </main>

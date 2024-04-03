@@ -9,61 +9,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/cart.css">
-
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="../script/cart.js"></script>    
 </head>
 
 <body>
     <?php
     require "../php/header.php";
-    require "../php/addCart.php";
+    require "../php/cart.php";
     echo returnHeaders();
     ?>
-
     <div id="cartContainer">
         <div id="compras">
             <div id="products">
-                <?php
-                    if(count($_SESSION['cart'])==0){
-                        header("Location: cartVazio.php");
-                        exit();
-                    } else {
-                        if (isset($_SESSION['cart'])) {
-                            foreach ($_SESSION['cart'] as $id => $qtd) {
-                                $sql = "SELECT * FROM products WHERE id = '$id'";
-                                $qr = mysqli_query($con, $sql) or die(mysqli_error($con));
-                                while ($ln = mysqli_fetch_assoc($qr)) {
-                                    echo '
-                                        <div class="produto">
-                                            <img src="' . $ln['image'] . '" alt="">
-                                            <div class="nomeItem">' . $ln['name'] . '</div>
-                                            <div class="preco">' . $ln['price'] . '</div>
-                                            <div>Subtotal: ' . $ln['price'] * $qtd . '</div>
-                                            <a href="?acao=remove&id='.$id.'">Remover</a>
-                                        </div>';
-                                }
-                            }
-                        }
-                    }
-                ?>
-
             </div>
-                <div id="linha"></div>
-                <div id="total">
-                    <?php
-                        $total = 0;
-                        foreach ($_SESSION['cart'] as $id => $qtd) {
-                            $sql = "SELECT * FROM products WHERE id = '$id'";
-                            $qr = mysqli_query($con, $sql) or die(mysqli_error($con));
-                            while ($ln = mysqli_fetch_assoc($qr)) {
-                                $total += $ln['price'] * $qtd;
-                            }
-                        }
-
-                        echo "Total: R$".$total.",00";
-                    ?>
-                </div>
-                <div id="linha"></div>
         </div>
 
         <div id="containerCompras">

@@ -9,11 +9,11 @@ main {
     width: 150px;
 }
 
-#mensagemCart {
+#messageCart {
     text-align: center;
 }
 
-#mensagemContainer {
+#messageContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +23,7 @@ main {
     border-radius: 5%;
 }
 
-#mensagemContainer a {
+#messageContainer a {
     margin: 10px;
     border-radius: 5%;
     background-color: rgba(255, 204, 108, 0.5);

@@ -5,25 +5,22 @@ session_start();
 
 if (isset($_SESSION['username'])) {
 
-    $username = $_SESSION['username'];
-    $oldPassword = $_REQUEST['oldPassword'];
-    $newPassword = $_REQUEST['newPassword'];
-    $confirmNewPassword = $_REQUEST['confirmNewPassword'];
+    $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_REQUEST['password'], FILTER_SANITIZE_STRING);
 
     $sqlCheck = "SELECT * FROM users WHERE username='$username' AND password='$oldPassword'";
     $resultCheck = mysqli_query($con, $sqlCheck);
+    if(mysqli_num_rows($resultCheck)) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    if(mysqli_num_rows($resultCheck) > 0 && $newPassword === $confirmNewPassword) {
         $sqlUpdate = "UPDATE users SET password='$newPassword' WHERE username='$username'";
         $resultUpdate = mysqli_query($con, $sqlUpdate);
 
         if ($resultUpdate) {
-            header("Location: sucesso.php");
-            exit;
+            echo "200";
         }
     }
 } else {
-    header("Location: paginaLogin.php");
-    exit;
+    echo "401";
 }
 ?>

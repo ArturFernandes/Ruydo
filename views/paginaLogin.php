@@ -13,17 +13,7 @@
 
         <script>
 
-            function testarEmail() {
-                let inputEmail = document.getElementById('email')
-                let valorEmail = inputEmail.value
-                let validarEmail = valorEmail.match(/^[^@]*@[^@]*\.[^@]*$/)
-
-                if (validarEmail == null) {
-                    return false
-                } else {
-                    return true
-                }
-            }
+            
 
     </script>
     </head>

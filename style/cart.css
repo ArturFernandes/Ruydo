@@ -1,4 +1,5 @@
 @import url('header.css');
+@import url('cartVazio.css');
 
 #cart img{
     position: fixed;
@@ -24,13 +25,16 @@
 }
 
 #products > div{
-    border: 1px solid rgb(0, 0, 0);
-    padding: 15px
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
 }
 
 
 #compras {
     display: flex;
+    justify-content: center;
     width: 100%;
     align-items: center;
     padding: 20px;
@@ -40,11 +44,6 @@
 #nomeItem{
     width: 100%;
     font-size: 20px;
-}
-
-#linha{
-    border: 1px solid black;
-    width: 100%
 }
 
 #total{
@@ -86,12 +85,6 @@
         line-height: 50px;
     }
 
-    #linha{
-        border: 1px solid black;
-        width: 100%
-    }
-
-
     #confirmarCompra, #continuarComprando{
         flex-direction: row;
         align-items: center;
@@ -112,9 +105,12 @@
     flex-direction:column;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(223, 222, 168, 0.692);
+    background-color: rgba(212, 212, 212, 0.151);
     width: 60%;
     height: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
 }
 
 

@@ -1,12 +1,12 @@
 <?php
     require_once '../php/conexao.php';
 
-    if (isset($_GET['category'])) {
-        $sql = "SELECT * FROM products WHERE category = '" . $_GET['category'] . "'";
-    } else if(isset($_REQUEST['busca'])) {
-        $sql = "SELECT * FROM products WHERE name LIKE '%$_REQUEST[busca]%'";
-    } else if (isset($_GET['highlight'])) {
-        $sql = "SELECT * FROM products WHERE highlight = '" .$_GET['highlight']. "'";
+    if (isset($_POST['category'])) {
+        $sql = "SELECT * FROM products WHERE category = '" . $_POST['category'] . "'";
+    } else if(isset($_REQUEST['search'])) {
+        $sql = "SELECT * FROM products WHERE name LIKE '%$_REQUEST[search]%'";
+    } else if (isset($_POST['highlight'])) {
+        $sql = "SELECT * FROM products WHERE highlight = '" .$_POST['highlight']. "'";
     } else {
         $sql = "SELECT * FROM products";
     }

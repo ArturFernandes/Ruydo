@@ -2,28 +2,24 @@
 #sidebar {
     font-weight: bold;
     background-color: rgba(199, 255, 191, 0.61);
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-size: 2rem;
+    align-items: center;
+    width: 100px;
 }
 
 #sidebar div button {
     display: flex;
     align-items: center;
     background: rgb(179, 224, 179);
-    border-radius: 5%;
-    width: 150%;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
     font-size: 20px;
-}
-
-#sidebar form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 90%;
-
+    padding: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 #sidebar div {
@@ -31,11 +27,32 @@
     width: 100px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#sidebar  button {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    border-radius: 5px; 
+    width: 80px;
+    height: 50px;
+    font-size: 20px;
+    background-color: rgb(179, 224, 179);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
 }
+
+#sidebar  button p {
+    margin: 0;
+}
+
 
 .products {
     display: flex;
@@ -97,7 +114,7 @@
     font-size: 1rem;
 }
 
-.comprar {
+.comprar, .addCart {
     background-color: rgb(243, 193, 101);
     width: 5rem;
     height: 2rem;
@@ -112,14 +129,11 @@
     color: black;
     padding: 0px 5px 0 5px;
     text-align: center;
-}
-
-#addCart {
-    font-size: small;
-}
-
-#addCart:hover {
     cursor: pointer;
+}
+
+.addCart {
+    font-size: small;
 }
 
 #productscontainer {
@@ -201,23 +215,19 @@
         width: 90%;
     }
 
-    #sidebar form div {
-        display: flex;
-        flex-direction: row;
-        
-    }
 
     #sidebar form button {
         display: flex;
-        flex-direction: row;
-        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 80px;
         font-size: 20px;
-        
     }
 }
 
 @media (max-width: 684px) {
-    #sidebar div p {
+    #sidebar form input p {
         display: none;
     }
 
