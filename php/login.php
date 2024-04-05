@@ -18,10 +18,12 @@ if(isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
             if(password_verify($password, $ln['password'])){
                 session_start();
                 $row = mysqli_fetch_assoc($result);
+                $user_email= $row['email'];
                 $user_id = $row['id'];
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['username'] = $username;
-                header('location: ../views/index.php');
+                $_SESSION['email'] = $email;
+                header('location: ../views/index.html');
                 exit();   
             }            
         } else {

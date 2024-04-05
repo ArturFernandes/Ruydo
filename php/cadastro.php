@@ -1,26 +1,31 @@
 <?php
 require_once 'conexao.php';
 
-$username = isset($_REQUEST['username']) ? trim($_REQUEST['username']) : '';
-$email = isset($_REQUEST['email']) ? trim($_REQUEST['email']) : '';
-$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : '';
+$username = isset($_REQUEST['username']) ? filter_var($_REQUEST['username'], FILTER_SANITIZE_STRING); : false;
+$email = isset($_REQUEST['email']) ? filter_var($_REQUEST['email'], FILTER_SANITIZE_STRING); : false;
+$password = isset($_REQUEST['password']) ? filter_var($_REQUEST['password'], FILTER_SANITIZE_STRING); : false;
 
-$sql_check = "SELECT * FROM users WHERE username='$username' OR email='$email'";
-$result_check = mysqli_query($con, $sql_check);
+if(!($username && $email && $password)) {
+    echo '401';
+    exit();
+}
+
+$sqlCheck = "SELECT * FROM users WHERE username='$username' OR email='$email'";
+$resultCheck = mysqli_query($con, $sqlCheck);
 
 
-if(mysqli_num_rows($result_check) > 0) {
+if(mysqli_num_rows($resultCheck) > 0) {
     header("Location: ../views/registerPage.php?error=user_exists");
     exit;
 } else {
     $password = filter_var($password, FILTER_SANITIZE_STRING);
 
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql_insert = "INSERT INTO users (username, password, email) VALUES ('$username', '$hashed_password', '$email')";
-    mysqli_query($con, $sql_insert);
+    $sqlInsert = "INSERT INTO users (username, password, email) VALUES ('$username', '$hashedPassword', '$email')";
+    mysqli_query($con, $sqlInsert);
 
-    header('Location: ../views/index.php');
+    header('Location: ../views/index.html');
     exit;
 }
 ?>

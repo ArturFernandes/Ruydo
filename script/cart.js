@@ -1,10 +1,11 @@
+import './main.js';
+
 $(document).ready(async function () {
     await importProducts();
 
     $('#products').on('click', ".addProduct",function () {
         var id = $(this).val();
-        $.post("../php/cart.php", { acao: 'add', id: id, cartUpdate: true }, async function () {
-            console.log("Product added")
+        $.post("../php/cart.php", { acao: 'add', id: id, cartUpdate: true }, function () {
             importProducts();
         });
     });
@@ -32,8 +33,19 @@ $(document).ready(async function () {
 
 function showCartProducts(data) {
     var products = data? JSON.parse(data): false;
-    if (!products) return
     $("#products").empty();
+    if (!products) {
+        $("#products").append(
+            '<div id="messageContainer">' +
+                '<div id="imgCd"><img src="https://static.thenounproject.com/png/23523-200.png" alt=""></div>' +
+                '<div id="messageCart">Carrinho Vazio!</div>' +
+                '<a href="index.html">Voltar às compras</a>' +
+            '</div>'
+        )
+
+        return
+    }
+
     var total = 0
 
     products.forEach(function (product) {

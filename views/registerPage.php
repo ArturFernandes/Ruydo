@@ -28,7 +28,7 @@
     </script>
     </head>
 
-    <body>
+    <body id="body">
     <?php
         require "../php/header.php";
         echo returnHeaders();

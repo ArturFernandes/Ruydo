@@ -1,11 +1,11 @@
-import * as cart from './cart.js';
+import { addToCart } from "./cart.js";
 
 $(document).ready(async function () {
   await displayProducts();
 
   $(".addCart").click(function (event) {
     event.preventDefault();
-    cart.addToCart(event.target.dataset.value);
+    addToCart(event.target.dataset.value);
   });
 
   async function displayProducts() {
@@ -63,7 +63,7 @@ export function returnProducts(data) {
         produto.name +
         '<div class="preco"> R$ ' +
         produto.price +
-        '</div><a href="cart.php?acao=add&id=' +
+        '</div><a href="cart.html?acao=add&id=' +
         produto.id +
         '" class="comprar">Comprar</a><a class="addCart" data-value="' +
         produto.id +

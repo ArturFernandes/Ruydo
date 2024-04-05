@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../style/sucesso.css">
 </head>
 
-<body>
+<body id="body">
     <?php
     require "../php/header.php";
     @session_start();

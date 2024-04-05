@@ -34,11 +34,9 @@ if(isset($_POST['acao'])) {
             $id = intval($_POST['id']);
             if(!isset($_SESSION['cart'][$id])) {
                 $_SESSION['cart'][$id] = 1;
-                returnProductsList($con);
             } else {
-                $_SESSION['cart'][$id] += 1;
+                $_SESSION['cart'][$id]++;
                 if(isset($_POST['cartUpdate'])) {
-                    returnProductsList($con);
                 }
             }
             break;
@@ -47,11 +45,9 @@ if(isset($_POST['acao'])) {
             $id = intval($_POST['id']);
             if(isset($_SESSION['cart'][$id])) {
                 if($_SESSION['cart'][$id] > 1) {
-                    $_SESSION['cart'][$id] -= 1;
-                    returnProductsList($con);
+                    $_SESSION['cart'][$id]--;
                 } else {
                     unset($_SESSION['cart'][$id]);
-                    returnProductsList($con);
                 }
             }
             break;
@@ -59,7 +55,6 @@ if(isset($_POST['acao'])) {
         case 'delete':
             $id = intval($_POST['id']);
             unset($_SESSION['cart'][$id]);
-            returnProductsList($con);
             break;
 
         case 'returnProducts':

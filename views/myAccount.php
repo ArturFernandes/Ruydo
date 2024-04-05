@@ -9,14 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/myAccount.css">
-    <script src="../script/views.js"></script>
+    <script type="module" src="../script/myAccount.js"></script>
 </head>
 
-<body>
+<body id="body">
     <?php
-    require "../php/header.php";
     require "../php/conexao.php";
-    echo returnHeaders();
+    @session_start();
 
     $username = $_SESSION['username'];
     $sql = "SELECT email FROM users WHERE username = '". $username. "'";
@@ -26,14 +25,25 @@
     $profilePic = '../imgs/vinyl_PNG5-removebg-preview.png';
     
     ?>
+    <header>
+        <h1 id="titulo"><a href="index.html">Ruydo🎼</a></h1>
+        <div id="menuContainer">
+            <div id="menu">
+                <label>|||</label>
+                <div id="container">
+                    <div id="inicio"><a href="index.html">Início</a></div>
+                    <div><a id="offers">Promoções</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
     <main>
         <div id="profileContainer">
-        <?php
-        echo '<div id="profileData">
-                <div id="profilePic"><img src="' . $profilePic .'"></div>
-                <div id="username">'. $username .'</div>
-                <div id="email">'. $email .'</div>';
-        ?>
+        
+        <div id="profileData">
+                <div id="profilePic"><img id="realPic" src=""></div>
+                <div id="username"></div>
+                <div id="email"></div>
                 <button id="changePasswordButton">Mudar Senha</button>
                 <div id="changeContainer" style="display: none;">
                     <div id="passwordChange">

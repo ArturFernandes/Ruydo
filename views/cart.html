@@ -9,16 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/cart.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="module" src="../script/cart.js"></script>    
 </head>
 
-<body>
-    <?php
-    require "../php/header.php";
-    require "../php/cart.php";
-    echo returnHeaders();
-    ?>
+<body id="body">
+    <header>
+        <h1 id="titulo"><a href="index.html">Ruydo🎼</a></h1>
+        <div id="menuContainer">
+            <div id="menu">
+                <label>|||</label>
+                <div id="container">
+                    <div id="inicio"><a href="index.html">Início</a></div>
+                    <div><a id="offers">Promoções</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
     <div id="cartContainer">
         <div id="compras">
             <div id="products">
@@ -27,7 +33,7 @@
 
         <div id="containerCompras">
             <div id="confirmarCompra"><a href="../php/confirmBuy.php">Confirmar Compra</a></div>
-            <div id="continuarComprando"><a href="index.php"> ⬅Continuar Comprando</a></div>
+            <div id="continuarComprando"><a href="index.html"> ⬅Continuar Comprando</a></div>
         </div>
     </div>
 </body>

@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body id="body">
 <div id="notification"></div>
 <?php
     require "../php/header.php";
