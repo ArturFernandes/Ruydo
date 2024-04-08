@@ -8,20 +8,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/product.css">
-    <script src="../script/views.js"></script>
+    <script type="module" src="../script/productPage.js"></script>
 
 </head>
 
 <body id="body">
 <div id="notification"></div>
-<?php
-    require "../php/header.php";
-    echo returnHeaders();
-    ?>
+
+<header>
+        <h1 id="titulo"><a href="index.html">Ruydo🎼</a></h1>
+        <div id="menuContainer">
+            <div id="menu">
+                <label>|||</label>
+                <div id="container">
+                    <div id="inicio"><a href="index.html">Início</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div id="cart"><a href="cart.php"><img src="https://cdn-icons-png.flaticon.com/512/57/57451.png?w=360" alt=""></a></div>
     <main>        
-        <div id="content"></div>
+        <div id="content">
             
+        </div>
+
+        
     </main>
     
 

@@ -1,4 +1,4 @@
-import './main.js';
+import * as main from './main.js';
 
 $(document).ready(async function () {
     await importProducts();
@@ -52,13 +52,13 @@ function showCartProducts(data) {
         total += product.price * product.qty;
         $("#products").append(
          '<div class="productContainer" id="prod'+ product.id +'Cont">' +   
-            '<div class="produto">' +
+            '<div class="product">' +
                 '<img src="' + product.image + '" alt="">' +
                 '<div class="nomeItem">' + product.name + '</div>' +
                 '<div class="preco">R$' +  product.price +  '</div>' +
-                '<button class="addProduct" value="'+ product.id +'"> + </button>' +    
-                '<div class="qty">' +  product.qty +  '</div>' +
                 '<button class="removeProduct" value="' + product.id + '"> - </button>' +
+                '<div class="qty">' +  product.qty +  '</div>' +
+                '<button class="addProduct" value="'+ product.id +'"> + </button>' +   
                 '<div>Subtotal: R$' +  product.price * product.qty +  '</div>' +
                 '<button class="deleteProduct" value="' + product.id + '">🗑</button>' +
             '</div>' +
@@ -66,7 +66,7 @@ function showCartProducts(data) {
         )
     })
         $("#products").append(
-            '<div id="total">'+ total +'</div>'
+            '<div id="total">Total: R$ '+ total +',00</div>'
         )
 
 }
@@ -78,16 +78,7 @@ export function addToCart(productId) {
             window.location.href = '../views/paginaLogin.php';  
         } else {
             console.log(response)
-            showNotification("Produto adicionado ao carrinho!");
+            main.showNotification("product adicionado ao carrinho!", true);
         }
     })
-}
-
-export function showNotification(message) {
-    var notification = $("#notification");
-    notification.text(message);
-    notification.css("display", "block");
-    setTimeout(function() {
-        notification.css("display", "none");
-    }, 2000);
 }

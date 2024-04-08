@@ -8,6 +8,12 @@ $(document).ready(async function () {
     addToCart(event.target.dataset.value);
   });
 
+  $(".product").click(function () {
+    let productId = $(this).attr('id');
+    localStorage.setItem('detailedProductId', productId);
+    window.location.href = '../views/product.html'
+  });
+
   async function displayProducts() {
       var data = await $.post('../php/indexMenu.php')
       returnProducts(data);
@@ -51,23 +57,25 @@ export function returnProducts(data) {
   var products = data ? JSON.parse(data) : [];
   $(".products").empty();
 
-  products.forEach(function (produto) {
+  products.forEach(function (product) {
     $(".products").append(
-      '<div class="produto" id="' +
-        produto.id +
-        '"><a href="produto.php?id=' +
-        produto.id +
+      '<div class="product" id="' +
+        product.id +
+        '"><a ' +
+        product.id +
         '"><img src="' +
-        produto.image +
+        product.image +
         '" alt=""></a><div class="nomeItem">' +
-        produto.name +
+        product.name +
         '<div class="preco"> R$ ' +
-        produto.price +
+        product.price +
         '</div><a href="cart.html?acao=add&id=' +
-        produto.id +
+        product.id +
         '" class="comprar">Comprar</a><a class="addCart" data-value="' +
-        produto.id +
+        product.id +
         '">Adicionar ao carrinho</a></div></div>'
     );
   });
 }
+
+

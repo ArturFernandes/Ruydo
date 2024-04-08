@@ -12,11 +12,11 @@
     border-radius: 3px 3px 3px 3px;
 }
 
-.produto, #confirmarCompra, #continuarComprando{
+.product, #confirmarCompra, #continuarComprando{
     font-size: 20px;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
@@ -64,7 +64,7 @@
         width: 200px;
     }
 
-    .produto{
+    .product{
         width: 500px;
         height: 200px;
         font-size: 20px;

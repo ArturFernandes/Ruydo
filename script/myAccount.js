@@ -1,26 +1,38 @@
-import './main.js';
+import * as main from './main.js';
 
 $(document).ready(function () {
-    const changePasswordButton = document.getElementById('changePasswordButton');
-    const changeContainer = document.getElementById('changeContainer');
     $.post('../php/changePassword.php', function(data) {
         console.log(data)
     })
 
     displayProfileData()
 
-    changePasswordButton.addEventListener('click', function() {
-        changeContainer.style.display == 'flex'?  changeContainer.style.display == 'none' :  changeContainer.style.display = 'flex';
-        changePasswordButton.style.display = 'none';
+    $('#changePasswordToggle').click(function() {
+        $('#changeContainer').css('display') === 'flex'? $('#changeContainer').css('display', 'none') : $('#changeContainer').css('display', 'flex');
+        $('#changePasswordToggle').css('display', 'none');
     });
+
+    $('#passwordChange').on('submit', function(event) {
+        let oldPassword = $('#oldPassword').val();
+        let newPassword = $('#newPassword').val();
+        changePassword(oldPassword, newPassword);
+        event.preventDefault();
+    })
+
 });
+
+function changePassword(oldPassword, newPassword) {
+    $.post('../php/changePassword.php', { action : 'changePassword', password : oldPassword, newPassword : newPassword}, function(data) {
+        data == '200'? main.showNotification('Senha alterada com sucesso!', true) : main.showNotification('Senha atual incorreta!', false);
+    }) 
+}
 
 function displayProfileData() {
     $.post('../php/changePassword.php', { action : 'displayProfile' } , function(data) {
         var profile = data? JSON.parse(data): false;
         $('#realPic').attr("src","../imgs/vinyl_PNG5-removebg-preview.png");
-        $('#username').attr("src", profile.username);
-        $('#email').attr("src",profile.email);
+        $('#username').text(profile.username);
+        $('#email').text(profile.email);
     })
 }
 

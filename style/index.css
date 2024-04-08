@@ -67,7 +67,7 @@
     margin: auto;
 }
 
-.produto {
+.product {
     display: flex;
     flex-direction: column;
     padding: 15px;
@@ -94,7 +94,7 @@
     color: black;
 }
 
-.produto img {
+.product img {
     width: 300px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -255,7 +255,7 @@
     }
     
 
-    .produto {
+    .product {
         font-size: 22px;
     }
 
@@ -267,7 +267,7 @@
         font-size: 25px;
     }
 
-    .produto img:hover {
+    .product img:hover {
         scale: 110%;
     }
 

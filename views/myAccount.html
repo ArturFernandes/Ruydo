@@ -13,18 +13,6 @@
 </head>
 
 <body id="body">
-    <?php
-    require "../php/conexao.php";
-    @session_start();
-
-    $username = $_SESSION['username'];
-    $sql = "SELECT email FROM users WHERE username = '". $username. "'";
-    $res = mysqli_query( $con, $sql );
-    $row = mysqli_fetch_assoc($res);
-    $email = $row['email'];
-    $profilePic = '../imgs/vinyl_PNG5-removebg-preview.png';
-    
-    ?>
     <header>
         <h1 id="titulo"><a href="index.html">Ruydo🎼</a></h1>
         <div id="menuContainer">
@@ -32,11 +20,11 @@
                 <label>|||</label>
                 <div id="container">
                     <div id="inicio"><a href="index.html">Início</a></div>
-                    <div><a id="offers">Promoções</a></div>
                 </div>
             </div>
         </div>
     </header>
+    <div id="notification"></div>
     <main>
         <div id="profileContainer">
         
@@ -44,14 +32,14 @@
                 <div id="profilePic"><img id="realPic" src=""></div>
                 <div id="username"></div>
                 <div id="email"></div>
-                <button id="changePasswordButton">Mudar Senha</button>
+                <button id="changePasswordToggle">Mudar Senha</button>
                 <div id="changeContainer" style="display: none;">
-                    <div id="passwordChange">
+                    <form id="passwordChange">
                         <input id="oldPassword" name="oldPassword" type="password" placeholder="Senha Antiga"></input>
                         <input id="newPassword" name="newPassword" type="password" placeholder="Nova Senha"></input>
                         <input id="confirmNewPassword" name="newPassword" type="password" placeholder="Confirmar Nova Senha"></input>
                         <button id="submitPasswordChange" type="submit">Confirmar</button>
-                    </div>            
+                    </form>            
                 </div>
 
                 <a id="exitAccount" href="../php/logout.php">Sair</a>

@@ -112,7 +112,6 @@ a {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #99e666a8;
     color: rgb(0, 14, 41);
     display: none;
     z-index: 9999;
