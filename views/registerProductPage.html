@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🎼Ruydo - A sua loja de discos!</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../style/register.css">
+        <script type="module" src="../script/registerProduct.js"></script>
+    </head>
+
+    <body id="body">
+        <header>
+            <h1 id="mainLogo"><a href="index.html">Ruydo🎼</a></h1>
+            <div id="menuContainer">
+                <div id="menu">
+                    <label>|||</label>
+                    <div id="container">
+                        <div id="homePage"><a href="index.html">Início</a></div>
+                        <div><a id="offers">Promoções</a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="notification"></div>
+
+        <div id="loginContainer">
+            <div class="registerContainer">
+                <h2>Cadastrar Produto</h2>
+                <form enctype="multipart/form-data" id="registerProductForm" method="post">
+                    <input type="text" name="name" placeholder="Nome do Produto" required>
+                    <label for="image" id="fileButton">Imagem do Produto <p>📤</p></label>
+                    <input id="image" type="file" name="image" placeholder="Imagem do Produto" required></input>
+                    <img id="previewImage" src="#" alt="Preview da Imagem" style="display: none; max-width: 100px; max-height: 100px;">
+                    <select id="selectCat" name="category" required>
+                        <option value="" disabled selected>Escolha uma Categoria</option>
+                        <option value="1">Cd's</option>
+                        <option value="2">LP's</option>
+                        <option value="3">Audio</option>
+                        <option value="4">Merch</option>
+                    </select>
+                    <input type="text" name="price" placeholder="Preço" required>
+                    <input type="text" name="offer" placeholder="Oferta">
+                    <input type="text" name="description" placeholder="Descrição" required>
+                    <button type="submit">Confirmar</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

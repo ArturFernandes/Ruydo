@@ -1,5 +1,5 @@
 @import url('header.css');
-@import url('cartVazio.css');
+@import url('emptyCart.css');
 
 #cart img{
     position: fixed;
@@ -12,7 +12,7 @@
     border-radius: 3px 3px 3px 3px;
 }
 
-.product, #confirmarCompra, #continuarComprando{
+.product, #buyConfirmation, #keepBuying{
     font-size: 20px;
     text-align: center;
     display: flex;
@@ -51,14 +51,21 @@
 }
 
 
+#cartContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+}
+
+#buyingOptions {
+    width: 20%;
+}
+
 @media (orientation: landscape){
 
-
-    #cartContainer {
-        padding: 20px;
-        display: flex;
-        justify-content: space-around;
-    }
 
     #compras img{
         width: 200px;
@@ -85,12 +92,29 @@
         line-height: 50px;
     }
 
-    #confirmarCompra, #continuarComprando{
+    #emptyCart, #buyConfirmation, #keepBuying{
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        background-color: orange;
-        border-radius: 15px;
+        justify-content: center;    
+        background-color: rgba(98, 191, 214, 0.623);
+        border-radius: 5px;
+        margin: 15px;
+        padding: 30px;
+        font-weight: bold;
+    }
+
+    #messageContainer {
+        margin: 0;
+    }
+
+    #emptyCart {
+        background-color: rgba(204, 76, 76, 0.548);
+        margin: 5px;
+        padding: 20px;
+    }
+
+    #emptyCart:hover {
+        cursor: pointer;
     }
 
     #products div{

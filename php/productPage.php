@@ -1,5 +1,5 @@
 <?php
-    require_once '../php/conexao.php';
+    require_once '../php/conection.php';
 
     if(isset($_POST["id"])) {
         $idproduct = $_POST["id"];

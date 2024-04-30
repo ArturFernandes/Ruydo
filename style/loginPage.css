@@ -52,7 +52,7 @@ img {
     width: 300px;
 }
 
-#loginTela {
+#loginContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +83,7 @@ h2 {
     flex-direction: column;
 }
 
-#loginTela input {
+#loginContainer input {
     background: #bababa65;
     width: 300px;
     height: 40px;
@@ -94,7 +94,7 @@ h2 {
     border: none;
 }
 
-#loginTela button {
+#loginContainer button {
     width: 150px;
     height: 40px;
     font-size: 1rem;

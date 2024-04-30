@@ -1,5 +1,30 @@
 @import url('header.css');
 
+#registerProduct {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    bottom: 12%;
+    right: 5%;
+    width: 3rem;
+    background-color: rgb(150, 219, 197);
+    border: 2px solid rgb(93, 158, 137);
+    border-radius: 3px 3px 3px 3px;
+}
+
+#registerProduct button {
+    background-color: rgb(150, 219, 197);
+    border: none;
+    font-size: 50px;
+}
+
+#section {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+}
+
 #sidebar {
     font-weight: bold;
     background-color: rgba(199, 255, 191, 0.61);
@@ -34,7 +59,7 @@
     margin: 5px;
 }
 
-#sidebar  button {
+#sidebar button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +75,7 @@
     text-align: center;
 }
 
-#sidebar  button p {
+#sidebar button p {
     margin: 0;
 }
 
@@ -115,7 +140,8 @@
     font-size: 1rem;
 }
 
-.comprar, .addCart {
+.buyProduct,
+.addCart {
     background-color: rgb(243, 193, 101);
     width: 5rem;
     height: 2rem;
@@ -237,7 +263,7 @@
         justify-content: center;
     }
 
-    #sidebar div button{
+    #sidebar div button {
         height: 100%;
         display: flex;
         justify-content: center;
@@ -253,7 +279,7 @@
         position: relative;
         border-radius: 0px 0px 15px 0px;
     }
-    
+
 
     .product {
         font-size: 22px;
@@ -269,11 +295,11 @@
 
     .product img:hover {
         scale: 110%;
+        cursor: pointer;
     }
 
     main {
         justify-content: flex-start;
         gap: 5vw;
     }
-
 }

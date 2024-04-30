@@ -1,7 +1,12 @@
 <?php
 @session_start();
-require_once 'conexao.php';
+require_once 'conection.php';
 
+if(!isset($_SESSION['username'])) {
+    echo "401";
+    exit();
+
+}
 
 if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
     $totalPrice = 0;
@@ -17,10 +22,12 @@ if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
     }
 
     unset($_SESSION['cart']);
-    header("Location: ../views/sucessoCompra.php");
+    header("Location: ../views/confirmBuy.html");
     exit;
+
 } else {
     header("Location: ../views/cartVazio.php");
     exit;
+
 }
 ?>

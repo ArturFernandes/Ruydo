@@ -34,7 +34,7 @@ main {
     align-items: center;
 }
 
-#addCart:hover {
+#buy, #addCart:hover {
     cursor:pointer;
 }
 @media (max-width: 684px) {
@@ -43,14 +43,9 @@ main {
     }
 }
 
-@media (orientation: landscape) {
-
-}
-
 @media (orientation: portrait) {
     #content {
         flex-direction: column;
         justify-content: center;
     }
 }
-

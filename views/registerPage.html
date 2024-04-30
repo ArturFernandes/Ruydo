@@ -8,8 +8,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../style/cart.css">
-        <script type="module" src="../script/cart.js"></script>
+        <link rel="stylesheet" href="../style/register.css">
+        <script type="module" src="../script/forms.js"></script>
     </head>
 
     <body id="body">
@@ -26,18 +26,19 @@
             </div>
         </header>
 
-        <div id="cartContainer">
-            <div id="compras">
-                <div id="products"></div>
-            </div>
+        <div id="notification"></div>
 
-            <div id="emptyCart">Limpar Carrinho</div>
-
-            <div id="buyingOptions">
-                <div id="buyConfirmation">Confirmar Compra</div>
-                <div id="keepBuying"><a href="index.html"> ⬅Continuar Comprando</a></div>
+        <div id="loginContainer">
+            <div class="registerContainer">
+                <h2>Cadastro</h2>
+                <form id="registerForm">
+                    <input type="text" name="username" placeholder="Nome de usuário" required>
+                    <input id="email" type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Senha" required>
+                    <input type="password" name="confirmPassword" placeholder="Confirme a Senha" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
             </div>
         </div>
     </body>
-
 </html>

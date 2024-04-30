@@ -1,5 +1,5 @@
 <?php
-require_once 'conexao.php';
+require_once 'conection.php';
 
 if(isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
     $username = filter_var($_REQUEST['username'], FILTER_SANITIZE_STRING);
@@ -17,17 +17,16 @@ if(isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
             $ln = mysqli_fetch_array($result);
             if(password_verify($password, $ln['password'])){
                 session_start();
-                $row = mysqli_fetch_assoc($result);
-                $user_email= $row['email'];
-                $user_id = $row['id'];
+                $user_email= $ln['email'];
+                $user_id = $ln['id'];
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['username'] = $username;
-                $_SESSION['email'] = $email;
-                header('location: ../views/index.html');
+                $_SESSION['email'] = $user_email;
+                echo('200');
                 exit();   
             }            
         } else {
-            header('location: ../views/paginaLogin.php?msg=Login e/ou senha inválidos');
+            echo('401');
             exit();
         }
     }
