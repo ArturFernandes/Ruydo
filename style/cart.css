@@ -1,0 +1,148 @@
+@import url('header.css');
+@import url('emptyCart.css');
+
+#cart img{
+    position: fixed;
+    z-index: 1;
+    bottom: 5%;
+    right: 5%;
+    width: 3rem;
+    background-color: rgb(150, 219, 197);
+    border: 2px solid rgb(93, 158, 137);
+    border-radius: 3px 3px 3px 3px;
+}
+
+#emptyCart, #buyConfirmation, #keepBuying{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+    background-color: rgba(98, 191, 214, 0.623);
+    border-radius: 5px;
+    margin: 15px;
+    padding: 30px;
+    font-weight: bold;
+}
+
+
+#emptyCart {
+    background-color: rgba(204, 76, 76, 0.548);
+    margin: 5px;
+    padding: 20px;
+}
+
+
+
+.product, #buyConfirmation, #keepBuying{
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#products{
+    gap: 20px;
+}
+
+#products > div{
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+
+#compras {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+#nomeItem{
+    width: 100%;
+    font-size: 20px;
+}
+
+#total{
+    font-size: 30px;
+}
+
+
+#cartContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+}
+
+#buyingOptions {
+    width: 200px;
+}
+
+.product img{
+    width: 200px;
+}
+
+@media (orientation: landscape){
+    .product{
+        width: 500px;
+        height: 200px;
+        font-size: 20px;
+        display: grid;
+        display: flex;
+        align-items: center;
+    }
+
+    #products{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 90%;
+    }
+
+    #preco{
+        font-weight: bold;
+        line-height: 50px;
+    }
+
+
+    #messageContainer {
+        margin: 0;
+    }
+
+
+    #emptyCart:hover {
+        cursor: pointer;
+    }
+
+    #products div{
+        flex-direction: row;
+        width: 100%;
+    }
+                
+}
+
+#compras{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(212, 212, 212, 0.151);
+    width: 60%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}

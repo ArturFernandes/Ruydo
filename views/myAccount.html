@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🎼Ruydo - A sua loja de discos!</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../style/myAccount.css">
+        <script type="module" src="../script/myAccount.js"></script>
+    </head>
+
+    <body id="body">
+        <header>
+            <h1 id="mainLogo"><a href="index.html">Ruydo🎼</a></h1>
+            <div id="menuContainer">
+                <div id="menu">
+                    <label>|||</label>
+                    <div id="container">
+                        <div id="homePage"><a href="index.html">Início</a></div>
+                        <div><a id="offers">Promoções</a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="notification"></div>
+
+        <main>
+            <div id="profileContainer">
+                <div id="profileData">
+                    <div id="profilePic"><img id="realPic" src=""></div>
+                    <div id="username"></div>
+                    <div id="email"></div>
+                    <button id="changePasswordToggle">Mudar Senha</button>
+                    <div id="changeContainer" style="display: none;">
+                        <form id="passwordChange">
+                            <input id="oldPassword" name="oldPassword" type="password" placeholder="Senha Antiga"></input>
+                            <input id="newPassword" name="newPassword" type="password" placeholder="Nova Senha"></input>
+                            <input id="confirmNewPassword" name="newPassword" type="password"
+                                placeholder="Confirmar Nova Senha"></input>
+                            <div id="changeBtnContainer">
+                                <button type="submit">Confirmar</button>
+                                <a id="abortPasswordChange" href="">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                    <a id="exitAccount" href="../php/logout.php">Sair da Conta</a>
+                </div>
+            </div>
+
+            <button id="showPurchases">Exibir Compras</button>
+
+            <div id="purchases" style="display: none;">
+                Compras
+            </div>
+        </main>
+    </body>
+</html>

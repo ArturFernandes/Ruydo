@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🎼Ruydo - A sua loja de discos!</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../style/register.css">
+        <script type="module" src="../script/forms.js"></script>
+    </head>
+
+    <body id="body">
+        <header>
+            <h1 id="mainLogo"><a href="index.html">Ruydo🎼</a></h1>
+            <div id="menuContainer">
+                <div id="menu">
+                    <label>|||</label>
+                    <div id="container">
+                        <div id="homePage"><a href="index.html">Início</a></div>
+                        <div><a id="offers">Promoções</a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="notification"></div>
+
+        <div id="loginContainer">
+            <div class="registerContainer">
+                <h2>Cadastro</h2>
+                <form id="registerForm">
+                    <input type="text" name="username" placeholder="Nome de usuário" required>
+                    <input id="email" type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Senha" required>
+                    <input type="password" name="confirmPassword" placeholder="Confirme a Senha" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

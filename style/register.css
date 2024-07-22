@@ -1,0 +1,103 @@
+@import url('header.css');
+
+.registerContainer {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registerContainer {
+    margin: 20px;
+}
+
+#registerForm, #registerProductForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#loginContainer button {
+    width: 150px;
+    height: 40px;
+    font-size: 1rem;
+    background-color: #42b883;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loginContainer input {
+    background: #bababa65;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+ #selectCat {
+    background: #bababa65;
+    width: 310px;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+#selectCat option {
+    background: white;
+    color: black;
+}
+
+#selectCat:focus {
+    outline: none;
+    border-color: #42b883;
+}
+
+input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    background: #85e6ba8a;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#fileButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #bababa65;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+#previewImage {
+    margin: auto;
+}
+
+#fileButton p {
+    font-size: 30px;
+}

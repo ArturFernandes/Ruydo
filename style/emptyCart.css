@@ -1,0 +1,30 @@
+@import url('header.css');
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#imgCd, #imgCd img {
+    width: 150px;
+}
+
+#messageCart {
+    text-align: center;
+}
+
+#messageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 193, 174, 0.842);
+    margin-top: 100px;
+    padding: 100px 10%;
+    border-radius: 5%;
+}
+
+#messageContainer a {
+    margin: 10px;
+    border-radius: 5%;
+    background-color: rgba(255, 204, 108, 0.5);
+}

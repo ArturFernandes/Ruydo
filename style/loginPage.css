@@ -1,0 +1,116 @@
+@import url('header.css');
+
+@media (orientation: portrait) {
+    #menu {
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        text-align: right;
+    }
+
+    #container {
+        display: none;
+        position: relative;
+        font-size: 25px;
+        line-height: 100px;
+        background-color: rgba(109, 228, 228, 0.9);
+        z-index: 999;
+        padding: 10px;
+        border-radius: 10px;
+        top: 20px;
+    }
+
+    #menu:hover #container {
+        display: block;
+    }
+
+    #perfil {
+        display: none;
+    }
+}
+#sidebar {
+    font-weight: bold;
+    background-color: rgba(199, 255, 191, 0.61);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+#sidebar div {
+    margin: 10px;
+    box-shadow: .5px .5px 2px rgb(78, 78, 47);
+    padding: 0px 10px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+img {
+    width: 300px;
+}
+
+#loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.containerLogin {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.containerLogin {
+    margin: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    background: #85e6ba8a;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginContainer input {
+    background: #bababa65;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+#loginContainer button {
+    width: 150px;
+    height: 40px;
+    font-size: 1rem;
+    background-color: #42b883;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media (orientation: landscape) {
+    #sidebar {
+        flex-direction: column;
+        height: 600px;
+        position: relative;
+        border-radius: 0px 0px 15px 0px;
+    }
+}

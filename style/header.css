@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(58, 165, 180);
+    background: linear-gradient(90deg, rgba(58, 165, 180, 0.11808473389355745) 0%, rgba(29, 253, 213, 0.16290266106442575) 50%, rgba(174, 252, 69, 0.10688025210084029) 100%);
+    font-weight: 400;
+}
+
+header {
+    color: rgb(17, 24, 77);
+    display: flex;
+    background-color: rgb(150, 219, 197);
+    align-items: center;
+
+    font-size: 1.5rem;
+
+    box-sizing: border-box;
+    gap: 3vw;
+
+}
+
+
+#cart img {
+    position: fixed;
+    z-index: 1;
+    bottom: 5%;
+    right: 5%;
+    width: 3rem;
+    background-color: rgb(150, 219, 197);
+    border: 2px solid rgb(93, 158, 137);
+    border-radius: 3px 3px 3px 3px;
+  }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#offers:hover {
+    cursor: pointer;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    right: 0;
+    gap: 2vw;
+}
+
+#perfil img {
+    display: flex;
+    width: 70px;
+}
+
+@media (orientation: landscape) {
+    header {
+        justify-content: space-around;
+
+    }
+
+    #menuContainer{ 
+        width: 55vw;
+    }
+    main {
+        display: flex;
+    }
+
+    #menu label {
+        display: none
+    }
+}
+
+@media (orientation: portrait) {
+    #menu {
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        text-align: right;
+    }
+
+    #container {
+        display: none;
+        position: relative;
+        font-size: 25px;
+        line-height: 100px;
+        background-color: rgba(109, 228, 228, 0.897);
+        z-index: 999;
+        padding: 10px;
+        border-radius: 10px;
+        top: 20px;
+    }
+
+    #menu:hover #container {
+        display: block;
+    }
+
+    #perfil {
+        display: none;
+    }
+}
+
+#mainLogo {
+    font-size: 3rem;
+    min-width: 300px;
+    text-align: right;
+}
+
+#notification {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 14, 41);
+    display: none;
+    z-index: 9999;
+}
